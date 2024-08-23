@@ -1,0 +1,119 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Code', monospace;
+    background-color: #f0f4f8;
+    /* Light soothing background */
+    color: #333333;
+    /* Dark gray for text */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Navbar */
+.navbar {
+    background-color: #ffffff;
+    /* White navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth */
+}
+
+.navbar ul li a {
+    color: #0077b6;
+    /* Soft blue for links */
+}
+
+.navbar ul li a:hover {
+    color: #00aaff;
+    /* Slightly brighter blue for hover effect */
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #e0f7fa;
+    /* Light pastel blue */
+    color: #0077b6;
+    /* Soft blue text */
+    padding: 50px 20px;
+    height: 100vh;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #0077b6;
+}
+
+.hero-section h2 {
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+/* Experience Section */
+.experience-section {
+    background-color: #ffffff;
+    /* White background */
+    color: #333333;
+    /* Dark gray text */
+    padding: 60px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.experience-card {
+    background-color: #f8f9fa;
+    /* Light gray card background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: #f1f8e9;
+    /* Light greenish tone for a calming effect */
+    color: #333333;
+    /* Dark gray text */
+    padding: 60px 20px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    /* White card background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #ffffff;
+    color: #0077b6;
+    /* Soft blue text */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-button {
+    background-color: #0077b6;
+    /* Soft blue */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.contact-button:hover {
+    background-color: #005f8b;
+    /* Slightly darker blue on hover */
+}
+
+/* Footer */
+.footer {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px;
+    text-align: center;
+}
