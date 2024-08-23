@@ -9,6 +9,18 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     cursor: url('custom-cursor.png'), auto;
+    animation: fadeInPage 1s ease-in-out;
+}
+
+/* Smooth fade-in effect for the entire page */
+@keyframes fadeInPage {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Center Layout for Container */
@@ -18,6 +30,20 @@ body {
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
+    animation: fadeInContainer 2s ease-in-out;
+}
+
+/* Fade-in for the main content */
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Header Navbar */
@@ -30,15 +56,32 @@ body {
     width: 100%;
     top: 0;
     z-index: 9999;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    /* Enhanced shadow */
+    transition: background-color 0.5s ease, box-shadow 0.3s ease;
+    animation: fadeInHeader 2s ease-in-out;
 }
 
-/* Change background color when scrolling */
+/* Header animation */
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Change background and shadow on scroll */
 .navbar.scrolled {
-    background-color: #001a33;
+    background-color: #001835;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
 }
 
+/* Navbar links with hover effects */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -51,11 +94,26 @@ body {
     text-decoration: none;
     color: #f0f0f0;
     font-weight: bold;
-    transition: color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar ul li a:hover {
     color: #00aaff;
+    transform: scale(1.1);
+    /* Slight hover animation */
+    animation: hoverLink 0.4s ease-in-out forwards;
+}
+
+/* Add underline effect on hover */
+@keyframes hoverLink {
+    0% {
+        border-bottom: none;
+    }
+
+    100% {
+        border-bottom: 2px solid #00aaff;
+    }
 }
 
 /* Hero Section */
@@ -70,6 +128,20 @@ body {
     z-index: 200;
     padding: 0 20px;
     margin-top: 80px;
+    animation: fadeInHero 2.5s ease-in-out;
+}
+
+/* Hero section animation */
+@keyframes fadeInHero {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .hero-section h1 {
@@ -79,8 +151,11 @@ body {
     animation: magicText 3s infinite ease-in-out;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
-    white-space: normal;
-    word-wrap: break-word;
+}
+
+.hero-section h1:hover {
+    transform: scale(1.2);
+    /* Only text scales */
 }
 
 .hero-section h2 {
@@ -88,14 +163,26 @@ body {
     color: #f0f0f0;
     margin-top: 0;
     transition: transform 0.3s ease;
-    white-space: normal;
-    word-wrap: break-word;
 }
 
-/* Hover Effect for Hero Section */
-.hero-section:hover h1,
-.hero-section:hover h2 {
+.hero-section h2:hover {
     transform: scale(1.1);
+    /* Only text scales */
+}
+
+/* Glowing text animation for h1 */
+@keyframes magicText {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.2);
+    }
 }
 
 /* Web Effect Canvas */
@@ -110,32 +197,72 @@ canvas#webEffect {
 
 /* About Section */
 .about-section {
-    background: linear-gradient(135deg, #002d44, #004060);
-    /* Dark gradient */
+    background: linear-gradient(135deg, #002d44, #003b55);
+    /* Darker blue gradient */
     color: #e0e0e0;
     padding: 80px 20px;
+    animation: slideInLeft 2s ease-in-out;
+}
+
+/* Sliding effect for sections */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .about-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #00ccff;
-    /* Consistent cyan heading */
+    animation: fadeInText 1.5s ease-in-out forwards;
+}
+
+/* Fade-in effect for section text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-section p {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #f0f0f0;
-    /* Light grey text for readability */
+    animation: fadeInText 1.5s ease-in-out 0.5s forwards;
 }
 
 /* Experience Section */
 .experience-section {
-    background: linear-gradient(135deg, #002f4b, #005f7f);
-    /* Dark blue gradient */
+    background: linear-gradient(135deg, #001f3d, #003b5f);
+    /* Dark blue with gradient */
     color: #f1f1f1;
     padding: 80px 20px;
+    animation: slideInRight 2s ease-in-out;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .experience-section h2 {
@@ -150,26 +277,28 @@ canvas#webEffect {
     margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInCard 1.5s ease-in-out;
 }
 
 .experience-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 /* Projects Section */
 .projects-section {
-    background: linear-gradient(135deg, #004d73, #00688a);
-    /* Deep blue-teal gradient */
-    color: #ffffff;
+    background: linear-gradient(135deg, #002144, #00305f);
+    /* Dark blue gradient with improved contrast */
+    color: #f1f1f1;
     padding: 80px 20px;
+    animation: slideInRight 2s ease-in-out;
 }
 
 .projects-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #00ccff;
-    /* Consistent cyan heading */
 }
 
 .project-card {
@@ -178,11 +307,13 @@ canvas#webEffect {
     margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInCard 1.5s ease-in-out;
 }
 
 .project-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 /* Contact Section */
@@ -191,31 +322,37 @@ canvas#webEffect {
     flex-direction: column;
     align-items: center;
     padding: 50px;
-    background: linear-gradient(135deg, #002d5f, #004080);
-    /* Deep blue gradient */
+    background: linear-gradient(135deg, #002d44, #003b55);
+    /* Same dark blue gradient */
     text-align: center;
     color: #e0e0e0;
+    animation: slideInLeft 2s ease-in-out;
 }
 
 .contact-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #00ccff;
-    /* Consistent heading color */
+    animation: fadeInText 1.5s ease-in-out forwards;
 }
 
+/* Aesthetic styling for "Get in Touch" button */
 .contact-button {
-    background-color: #00aaff;
+    background-color: #003b88;
+    /* Dark blue button */
     color: white;
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 25px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: #0099dd;
+    background-color: #002d66;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.7);
 }
 
 /* Footer */
@@ -225,6 +362,25 @@ canvas#webEffect {
     background-color: #001f3f;
     position: relative;
     color: #f0f0f0;
+    font-size: 0.8rem;
+    /* Reduced text size */
+    animation: fadeInFooter 2s ease-in-out;
+}
+
+/* Footer fade-in */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Smooth scroll for navigation links */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Media Queries */
